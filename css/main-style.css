@@ -1349,6 +1349,161 @@ font-weight: bold;
 
 /* end events section  */
 
+/* start pricing style   */
+
+.pricing {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: #e4e4e4;
+  
+}
+.pricing .container
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+}
+.pricing .box 
+{
+     position: relative;
+     box-shadow: 0 12px 20px 0 rgb(0 0 0 /13%), 0 20x 4px 0 rgb(0 0 0 /12%);
+     background-color: white;
+     text-align: center;
+     transition: var(--main-transation-duration);
+     z-index: 1;
+     
+}
+.pricing .box::before,
+.pricing .box::after
+{
+    content: "";
+    position: absolute;
+    height: 50%;
+    background-color: #f6f6f6;
+    transition: var(--main-transation-duration);
+    z-index: -1;
+    width: 0;
+}
+.pricing .box::before
+{
+    top: 0;
+    left: 0;
+
+}
+.pricing .box::after 
+{
+    right: 0;
+    bottom: 0;
+}
+.pricing .box:hover::before,
+.pricing .box:hover::after
+{
+    width: 100%;
+}
+
+@media (min-width:1200px) {
+    .pricing .box.popular
+    {
+        top: -20px;
+    }
+    
+}
+.pricing .box.popular .label
+{
+    position: absolute;
+    writing-mode: vertical-rl;
+    background-color: var(--main-color);
+    color: white;
+    font-weight:bold;
+    font-size: 18px;
+    padding: 10px 10px 35px 10px;
+    right: 20px;
+    width: 40px;
+}
+.pricing .box.popular .label::before
+{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    border-width: 20px;
+
+}
+.pricing .box .title 
+{
+
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: -1px;
+    margin: 30px 0;
+}
+
+.pricing .box img
+{
+    width: 80px;
+    margin-bottom: 30px;
+}
+.pricing .box .price{
+
+    margin-bottom: 20px;
+
+}
+.pricing .box .price span:first-child
+{
+    font-weight: bold;
+    font-size: 60px;
+    color: var(--main-color);
+    display: block;
+    margin-bottom: 5px;
+}
+.pricing .box .price span:last-child
+{
+    color: #777;
+
+}
+
+.pricing .box ul 
+{
+    text-align: left;
+
+}
+.pricing .box ul li 
+{
+    border-top: 1px solid #eee;
+    padding:20px ;
+
+}
+.pricing .box ul li::before
+{
+    content: '\f00c';
+    font-family: "Font Awesome 5 Free";
+    margin-right: 10px;
+    font-weight: 900;
+    color: var(--main-color);
+
+}
+.pricing .box  a{
+
+    display: block;
+    margin: 30px auto;
+    width: fit-content;
+    background-color: white;
+    color:var(--main-color); 
+    font-weight: bold;
+    padding:15px 20px ;
+    border: 2px solid var(--main-color);
+    border-radius:6px;
+}
+.pricing .box a:hover
+{
+
+    background-color: var(--main-color);
+    color: white;
+}
+/* end pricing style   */
 
 
 /* start animation    */
